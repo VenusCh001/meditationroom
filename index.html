@@ -8,64 +8,135 @@
     <script src="arrow-key-rotation.js"></script>
     <script src="play-on-window-click.js"></script>
     <script src="play-on-vrdisplayactivate-or-enter-vr.js"></script>
-    <script src="hide-once-playing.js"></script>
-
     <!-- Specify our scene. -->
     <a-scene>
-      <!-- The original example also has this 180 degree rotation, to appear to be going forward. -->
-      <a-videosphere rotation="0 180 0" src="#video" 
-                     play-on-window-click
-                     play-on-vrdisplayactivate-or-enter-vr>
-      </a-videosphere>
-      <a-sound id = "sound" volume = "3" src="#audio" autoplay="true"
-    position="0 0 0" play-on-window-click ></a-sound>
+      <a-sky id="image-360" rotation = "0 0 0" src="https://cdn.glitch.com/858eae5d-8353-4b6c-ab8a-4f4614fce5c5%2Fmilkyway_both_hemispheres.jpg?1555557111405"></a-sky>
       
-      <a-sphere onclick = "window.location.href='waterfall.html';" position="0 -5 0" radius="1.25" color="#ffffff" visible = "false"
-                play-on-window-click
-                play-on-vrdisplayactivate-or-enter-vr></a-sphere>
-      
-      <a-cylinder color="white" onclick = "window.location.href='index.html';" material="side: double" position="-4 -5 0" height = "0.2"  rotation="0 10 0"></a-cylinder>
-      <a-entity id="exitText" position= "-4 -4.8 0" rotation = "-80 0 0" text="align:center; 
-                width:40 ;
+      <a-sphere src = "#waterfallTexture" onclick = "window.location.href='waterfall.html'" position = "6 0 -10"></a-sphere>
+      <a-entity id="waterfallText" position="5.5 -1.2 -9" text="align:center; 
+                width:20;
                 wrapCount:100;
-                color:red;
-                value:EXIT;
+                color:white;
+                value: Waterfall;
+                font: exo2semibold;">
+        </a-entity>
+      
+      <a-sphere src = "#beachTexture" onclick = "window.location.href='beach.html'" position = "0 6 -10"></a-sphere>
+       <a-entity id="beachText" position="0 4 -9" text="align:center; 
+                width:20;
+                wrapCount:100;
+                color:white;
+                value: Beach;
+                font: exo2semibold;">
+        </a-entity>
+      
+      <a-sphere src = "#groundTexture" onclick = "window.location.href='city.html'" position = "-6 0 -10"></a-sphere>
+      <a-entity id="cityText" position="-5.5 -1.2 -9" text="align:center; 
+                width:20;
+                wrapCount:100;
+                color:white;
+                value: City;
+                font: exo2semibold;">
+        </a-entity>
+      
+      <!--<a-cylinder color="white" material="side: double" position="6 0 -10" height = "0.2" open-ended="true" rotation="90 -10 0"></a-cylinder>
+      <a-cylinder color="black" material="side: double" position="0 0 -8" open-ended="true" rotation="90 0 0"></a-cylinder>
+      <a-cylinder color="black" material="side: double" position="0 0 -6" open-ended="true" rotation="90 0 0"></a-cylinder>-->
+      
+      <a-cylinder color="grey" onclick = "window.location.href='beach.html'" material="side: double" radius="2" position="0 -7 -6"  side="double" rotation="40 -20 0"></a-cylinder>
+         <a-entity id="startText" position="0 -4 -3.2"  text="align:center; 
+                width:30;
+                wrapCount:100;
+                color:yellow;
+                value: START;
+                font: exo2semibold;">
+      </a-entity>
+       
+      
+      <!--<a-entity id="refresh-button" geometry="primitive: box" material="color: white" position="0 -2 -4"></a-entity>
+      <a-plane rotation="-10 0 0"></a-plane>
+      <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"></a-plane>-->
+      
+      
+      
+      <a-entity size="1" position="0 0 0" text-geometry="value: What's up"></a-entity>      
+      
+        <a-entity id="Title" position="0 0.5 -1.5" text="align:center; 
+                width:8;
+                wrapCount:100;
+                color:white;
+                value: Mindfulness Meditation;
                 font: exo2bold;">
         </a-entity>
       
-      <!-- Define camera with zero user height, movement disabled and arrow key rotation added. -->
       <a-camera user-height="0" wasd-controls-enabled="false" arrow-key-rotation>
+        
+      <a-sound id = "sound" src="#bgm" loop="true" autoplay="true"
+    position="0 0 0"></a-sound>
+        
+        <a-sound id = "voice" volume = "3" src="#voiceover" autoplay="true"
+    position="0 0 0"></a-sound>
+      
+      
+        
+      <!-- Define camera with zero user height, movement disabled and arrow key rotation added. -->
+    
         <!-- Text element for display messaging.  Hide once video is playing. -->
         <a-entity id="msg" position="0 -0.3 -1.5" text="align:center; 
                 width:3;
                 wrapCount:100;
                 color:white;
-                value:Please look down to change scene or exit"
-                >
+                value:Please choose a scene, or look down to start"
+                hide-once-playing="#video">
         </a-entity>
-        <a-entity cursor="fuse: true; fuseTimeout: 1500"
+      
+       <a-entity cursor="fuse: true; fuseTimeout: 500"
             position="0 0 -1"
             geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.023"
-            material="color: black; shader: flat">
-        </a-entity>
-      </a-camera>      
-      
+            material="color: grey; shader: flat">
+        </a-entity>  
+      </a-camera>
       <!-- Wait for the video to load. -->
       <a-assets>
+        <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+        <img id="waterfallTexture" src="https://cdn.glitch.com/858eae5d-8353-4b6c-ab8a-4f4614fce5c5%2Fwaterfall.png?1555559418410">
+        <img id="beachTexture" src="https://cdn.glitch.com/858eae5d-8353-4b6c-ab8a-4f4614fce5c5%2Fbeach.png?1555559420369">
         <!-- Single source video. -->
-        <video id="video" style="display:none" 
-               autoplay loop crossorigin="anonymous" playsinline webkit-playsinline>
-          <!-- MP4 video source. -->
+        
+        
+        
+        
+        
+        
+        <video id="video" style="display:none" preload="auto"
+                loop crossorigin="anonymous" playsinline webkit-playsinline>
+          <!-- MP4 video source. 1-->
           <source type="video/mp4"
-               src="https://cdn.glitch.com/858eae5d-8353-4b6c-ab8a-4f4614fce5c5%2Fbeach_360_test_2a.mp4?1555568014867" />
+               src="https://cdn.glitch.com/95fffca9-6988-450b-be1a-bf6a2e23ea1f%2Fwaterfall.mp4?1555266614466" />
         </video>
-        <audio id="audio" src = "https://cdn.glitch.com/858eae5d-8353-4b6c-ab8a-4f4614fce5c5%2F1stMedit.mp3?1555616741799" ></audio>   
+        <video id="video1" style="display:none" preload="auto"
+               loop crossorigin="anonymous" playsinline webkit-playsinline>
+          <!-- MP4 video source.2 -->
+          <source type="video/mp4"
+               src="https://cdn.glitch.com/95fffca9-6988-450b-be1a-bf6a2e23ea1f%2Ftest1.mp4?1555186206104" />
+        </video>
+        <video id="video2" style="display:none" preload="auto"
+               loop crossorigin="anonymous" playsinline webkit-playsinline>
+          <!-- MP4 video source. 3-->
+          <source type="video/mp4"
+               src="https://cdn.glitch.com/95fffca9-6988-450b-be1a-bf6a2e23ea1f%2Fbeach_360_tempvoice%20_hci.mp4?1555457355452" />
+        </video>
+        
+        <audio id="audio" preload="auto" src = "https://cdn.glitch.com/95fffca9-6988-450b-be1a-bf6a2e23ea1f%2Fmeditation_male_voice_5min_test.mp3?1555247334366" ></audio>
+        <audio id="bgm" preload="auto" src = "https://cdn.glitch.com/95fffca9-6988-450b-be1a-bf6a2e23ea1f%2Fyzs_bgm.mp3?1555597052912" ></audio>    
+        <audio id="voiceover" preload="auto"  src = "https://cdn.glitch.com/858eae5d-8353-4b6c-ab8a-4f4614fce5c5%2Fhome.mp3?1555616741449" ></audio>  
       </a-assets>
     </a-scene>
     
+    
     <!-- Show a button to switch to the multi-source example that shows detail. -->
-    <button onClick="window.location.href='multi-source-detail.html'" style="position:absolute;top:10px;right:10px;">
+    <!--<button onClick="window.location.href='multi-source-detail.html'" style="position:absolute;top:10px;right:10px;">
       Switch to multi-source detail example
-    </button>
+    </button>-->
   </body>
 </html>
