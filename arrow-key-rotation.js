@@ -2,7 +2,10 @@
 var index = 0;
 
 function exit(){
-document.getElementById
+  index = 0;
+  document.getElementById("image-360").setAttribute('visible','true');
+  document.getElementById("mainStuff").setAttribute('visible','true');
+  document.getElementById("
 
 }
 
