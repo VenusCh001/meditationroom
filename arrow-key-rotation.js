@@ -1,11 +1,11 @@
 
 var index = 0;
 
+
 function exit(){
   index = 0;
-  document.getElementById("image-360").setAttribute('visible','true');
+  document.getElementById("videoStuff").setAttribute('visible','false');
   document.getElementById("mainStuff").setAttribute('visible','true');
-  document.getElementById("
 
 }
 

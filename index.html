@@ -10,15 +10,36 @@
     <script src="play-on-vrdisplayactivate-or-enter-vr.js"></script>
     <!-- Specify our scene. -->
     <a-scene>
-      <a-sky id="image-360" rotation = "0 0 0" src="https://cdn.glitch.com/858eae5d-8353-4b6c-ab8a-4f4614fce5c5%2Fmilkyway_both_hemispheres.jpg?1555557111405" visible="true"></a-sky>
-      
-      <a-videosphere idrotation="0 180 0" 
-                     visible="false"
+      <!--Video Stuff-->
+      <a-entity id = "videoStuff">
+      <a-videosphere id = "vsphere" rotation="0 180 0" 
+                     src=""
+                     visible = "false"
                      play-on-window-click
                      play-on-vrdisplayactivate-or-enter-vr>
       </a-videosphere>
+      <!--<a-sound id = "sound" volume = "3" src="#audio" autoplay="true"
+    position="0 0 0" play-on-window-click ></a-sound>-->
+      
+      <a-sphere onclick = "changeScene()" position="0 -5 0" radius="1.25" color="#ffffff" visible = "false"></a-sphere>
+      
+      <a-cylinder color="white" onclick = "window.location.href='index.html';" material="side: double" position="-4 -5 0" height = "0.2"  rotation="0 10 0"></a-cylinder>
+      <a-entity id="exitText" position= "-4 -4.8 0" rotation = "-80 0 0" text="align:center; 
+                width:40 ;
+                wrapCount:100;
+                color:red;
+                value:EXIT;
+                font: exo2bold;">
+        </a-entity>
+      </a-entity>
+      
+      <!--MainPage Stuff-->
       
       <a-entity id="mainStuff" visible = "true">
+        
+      <a-sky id="image-360" rotation = "0 0 0" src="https://cdn.glitch.com/858eae5d-8353-4b6c-ab8a-4f4614fce5c5%2Fmilkyway_both_hemispheres.jpg?1555557111405" visible="true"></a-sky>
+      
+      
       <a-sphere id="waterfall" src = "#waterfallTexture" onclick = "window.location.href='waterfall.html'" position = "6 0 -10"></a-sphere>
       <a-entity id="waterfallText" position="5.5 -1.2 -9" text="align:center; 
                 width:20;
