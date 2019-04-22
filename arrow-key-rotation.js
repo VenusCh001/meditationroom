@@ -1,3 +1,19 @@
+
+function goToScene(){
+
+
+}
+
+var index = 0;
+
+function changeScene(){
+  var videos = ["src:#video;", "src:#video1;", "src:#video2;"];
+  index = (index+1)%videos.length;
+  video.paused ? video.play() : video.pause();
+  document.getElementById('vsphere').material.pause();
+  document.getElementById('vsphere').setAttribute('material', videos[index]);
+
+}
 AFRAME.registerComponent('arrow-key-rotation', {
   schema: {
     enabled: {default: true},
