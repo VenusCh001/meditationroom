@@ -7,6 +7,7 @@ video.currentTime = 0;  // Seek to the beginning
 video.pause();
 
 function start(i){
+  document.querySelector("voice").
   index = i;
   document.getElementById("videoStuff").setAttribute('visible','true');
   document.getElementById("mainStuff").setAttribute('visible','false');
