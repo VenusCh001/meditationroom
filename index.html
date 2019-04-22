@@ -12,6 +12,11 @@
     <a-scene>
       <a-sky id="image-360" rotation = "0 0 0" src="https://cdn.glitch.com/858eae5d-8353-4b6c-ab8a-4f4614fce5c5%2Fmilkyway_both_hemispheres.jpg?1555557111405"></a-sky>
       
+      <a-videosphere rotation="0 180 0" src="#video" 
+                     play-on-window-click
+                     play-on-vrdisplayactivate-or-enter-vr>
+      </a-videosphere>
+      
       <a-sphere src = "#waterfallTexture" onclick = "window.location.href='waterfall.html'" position = "6 0 -10"></a-sphere>
       <a-entity id="waterfallText" position="5.5 -1.2 -9" text="align:center; 
                 width:20;
@@ -113,19 +118,19 @@
                 loop crossorigin="anonymous" playsinline webkit-playsinline>
           <!-- MP4 video source. 1-->
           <source type="video/mp4"
-               src="https://cdn.glitch.com/95fffca9-6988-450b-be1a-bf6a2e23ea1f%2Fwaterfall.mp4?1555266614466" />
+               src="https://cdn.glitch.com/45fdcef8-02ac-4e6d-8490-30e070fdc47f%2Fbeach_human_voice_2.mp4?1555702692075" />
         </video>
         <video id="video1" style="display:none" preload="auto"
                loop crossorigin="anonymous" playsinline webkit-playsinline>
           <!-- MP4 video source.2 -->
           <source type="video/mp4"
-               src="https://cdn.glitch.com/95fffca9-6988-450b-be1a-bf6a2e23ea1f%2Ftest1.mp4?1555186206104" />
+               src="https://cdn.glitch.com/45fdcef8-02ac-4e6d-8490-30e070fdc47f%2Fwaterfall_human_voice_2.mp4?1555702512950" />
         </video>
         <video id="video2" style="display:none" preload="auto"
                loop crossorigin="anonymous" playsinline webkit-playsinline>
           <!-- MP4 video source. 3-->
           <source type="video/mp4"
-               src="https://cdn.glitch.com/95fffca9-6988-450b-be1a-bf6a2e23ea1f%2Fbeach_360_tempvoice%20_hci.mp4?1555457355452" />
+               src="https://cdn.glitch.com/45fdcef8-02ac-4e6d-8490-30e070fdc47f%2Fcity_human_voice_2.mp4?1555702999285" />
         </video>
         
         <audio id="audio" preload="auto" src = "https://cdn.glitch.com/95fffca9-6988-450b-be1a-bf6a2e23ea1f%2Fmeditation_male_voice_5min_test.mp3?1555247334366" ></audio>
