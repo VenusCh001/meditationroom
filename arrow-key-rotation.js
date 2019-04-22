@@ -1,6 +1,10 @@
 
 var index = 0;
-
+var videoSrc = ["src: #video;", "src: #video1;", "src: #video2;"];
+var videos = ["#video", "#video1", "#video2"];
+var video = document.querySelector("#video");
+video.currentTime = 0;  // Seek to the beginning
+video.pause();
 
 function start(i){
   index = i;
@@ -19,8 +23,6 @@ function exit(){
 }
 
 function changeScene(){
-  var videoSrc = ["src: #video;", "src: #video1;", "src: #video2;"];
-  var videos = ["#video", "#video1", "#video2"];
   var video = document.querySelector(videos[index]);
   video.currentTime = 0;  // Seek to the beginning
   video.pause();
