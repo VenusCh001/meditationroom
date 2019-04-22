@@ -51,11 +51,23 @@
       <!-- Wait for the video to load. -->
       <a-assets>
         <!-- Single source video. -->
-        <video id="video" style="display:none" 
-               autoplay loop crossorigin="anonymous" playsinline webkit-playsinline>
-          <!-- MP4 video source. -->
+        <video id="video" style="display:none" preload="auto"
+                loop crossorigin="anonymous" playsinline webkit-playsinline>
+          <!-- MP4 video source. 1-->
           <source type="video/mp4"
                src="https://cdn.glitch.com/45fdcef8-02ac-4e6d-8490-30e070fdc47f%2Fbeach_human_voice_2.mp4?1555702692075" />
+        </video>
+        <video id="video1" style="display:none" preload="auto"
+               loop crossorigin="anonymous" playsinline webkit-playsinline>
+          <!-- MP4 video source.2 -->
+          <source type="video/mp4"
+               src="https://cdn.glitch.com/45fdcef8-02ac-4e6d-8490-30e070fdc47f%2Fwaterfall_human_voice_2.mp4?1555702512950" />
+        </video>
+        <video id="video2" style="display:none" preload="auto"
+               loop crossorigin="anonymous" playsinline webkit-playsinline>
+          <!-- MP4 video source. 3-->
+          <source type="video/mp4"
+               src="https://cdn.glitch.com/45fdcef8-02ac-4e6d-8490-30e070fdc47f%2Fcity_human_voice_2.mp4?1555702999285" />
         </video>
         <audio id="audio" src = "https://cdn.glitch.com/858eae5d-8353-4b6c-ab8a-4f4614fce5c5%2F1stMedit.mp3?1555616741799" ></audio>
       </a-assets>
