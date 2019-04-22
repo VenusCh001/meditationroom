@@ -2,6 +2,14 @@
 var index = 0;
 
 
+function start(){
+  index = 0;
+  document.getElementById("videoStuff").setAttribute('visible','true');
+  document.querySelector('a-videosphere').setAttribute('material', "src: #video;");
+  document.getElementById("mainStuff").setAttribute('visible','false');
+
+}
+
 function exit(){
   index = 0;
   document.getElementById("videoStuff").setAttribute('visible','false');
