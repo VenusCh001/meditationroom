@@ -1,18 +1,17 @@
 
-function goToScene(){
-
-
-}
-
 var index = 0;
 
 function changeScene(){
-  var videos = ["src:#video;", "src:#video1;", "src:#video2;"];
+  var videoSrc = ["src:#video;", "src:#video1;", "src:#video2;"];
+  var videos = ["#video", "#video1", "#video2"];
+  var video = document.querySelector(videos[index]);
+  video.currentTime = 0;  // Seek to the beginning
+  video.pause();
   index = (index+1)%videos.length;
-  video.paused ? video.play() : video.pause();
-  document.getElementById('vsphere').material.pause();
-  document.getElementById('vsphere').setAttribute('material', videos[index]);
-
+  document.querySelector('#videosphere').setAttribute('material', videoSrc[index]);
+  var video = document.querySelector(videos[index]);
+  video.currentTime = 0;  // Seek to the beginning
+  video.play();
 }
 AFRAME.registerComponent('arrow-key-rotation', {
   schema: {
