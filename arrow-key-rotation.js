@@ -1,6 +1,11 @@
 
 var index = 0;
 
+function exit(){
+document.getElementById
+
+}
+
 function changeScene(){
   var videoSrc = ["src: #video;", "src: #video1;", "src: #video2;"];
   var videos = ["#video", "#video1", "#video2"];
@@ -8,7 +13,7 @@ function changeScene(){
   video.currentTime = 0;  // Seek to the beginning
   video.pause();
   index = (index+1)%videos.length;
-  document.querySelector('videosphere').setAttribute('material', videoSrc[index]);
+  document.querySelector('a-videosphere').setAttribute('material', videoSrc[index]);
   var video = document.querySelector(videos[index]);
   video.currentTime = 0;  // Seek to the beginning
   video.play();
