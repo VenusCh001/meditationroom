@@ -2,19 +2,20 @@
 var index = 0;
 
 
-function start(){
-  index = 0;
+function start(i){
+  index = i;
   document.getElementById("videoStuff").setAttribute('visible','true');
-  document.querySelector('a-videosphere').setAttribute('material', "src: #video;");
   document.getElementById("mainStuff").setAttribute('visible','false');
-
+  document.querySelector('a-videosphere').setAttribute('material', "src: #video;");
+  var video = document.querySelector("#video");
+  video.currentTime = 0;  // Seek to the beginning
+  video.pause();
 }
 
 function exit(){
   index = 0;
   document.getElementById("videoStuff").setAttribute('visible','false');
   document.getElementById("mainStuff").setAttribute('visible','true');
-
 }
 
 function changeScene(){

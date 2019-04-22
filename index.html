@@ -13,7 +13,7 @@
       <!--Video Stuff-->
       <a-entity id = "videoStuff">
       <a-videosphere id = "vsphere" rotation="0 180 0" 
-                     src=""
+                     src= "#video"
                      visible = "false"
                      play-on-window-click
                      play-on-vrdisplayactivate-or-enter-vr>
@@ -40,7 +40,7 @@
       <a-sky id="image-360" rotation = "0 0 0" src="https://cdn.glitch.com/858eae5d-8353-4b6c-ab8a-4f4614fce5c5%2Fmilkyway_both_hemispheres.jpg?1555557111405" visible="true"></a-sky>
       
       
-      <a-sphere id="waterfall" src = "#waterfallTexture" onclick = "window.location.href='waterfall.html'" position = "6 0 -10"></a-sphere>
+      <a-sphere id="waterfall" src = "#waterfallTexture" onclick = "start(1)" position = "6 0 -10"></a-sphere>
       <a-entity id="waterfallText" position="5.5 -1.2 -9" text="align:center; 
                 width:20;
                 wrapCount:100;
@@ -49,7 +49,7 @@
                 font: exo2semibold;">
         </a-entity>
       
-      <a-sphere src = "#beachTexture" onclick = "window.location.href='beach.html'" position = "0 6 -10"></a-sphere>
+      <a-sphere src = "#beachTexture" onclick = "start(0)" position = "0 6 -10"></a-sphere>
        <a-entity id="beachText" position="0 4 -9" text="align:center; 
                 width:20;
                 wrapCount:100;
@@ -58,7 +58,7 @@
                 font: exo2semibold;">
         </a-entity>
       
-      <a-sphere src = "#cityTexture" onclick = "window.location.href='city.html'" position = "-6 0 -10"></a-sphere>
+      <a-sphere src = "#cityTexture" onclick = "start(2)" position = "-6 0 -10"></a-sphere>
       <a-entity id="cityText" position="-5.5 -1.2 -9" text="align:center; 
                 width:20;
                 wrapCount:100;
@@ -71,7 +71,7 @@
       <a-cylinder color="black" material="side: double" position="0 0 -8" open-ended="true" rotation="90 0 0"></a-cylinder>
       <a-cylinder color="black" material="side: double" position="0 0 -6" open-ended="true" rotation="90 0 0"></a-cylinder>-->
       
-      <a-cylinder color="grey" onclick = "window.location.href='beach.html'" material="side: double" radius="2" position="0 -7 -6"  side="double" rotation="40 -20 0"></a-cylinder>
+      <a-cylinder color="grey" onclick = "start(0)" material="side: double" radius="2" position="0 -7 -6"  side="double" rotation="40 -20 0"></a-cylinder>
          <a-entity id="startText" position="0 -4 -3.2"  text="align:center; 
                 width:30;
                 wrapCount:100;
