@@ -3,7 +3,7 @@ var index = 0;
 var videoSrc = ["src: #video;", "src: #video1;", "src: #video2;"];
 var videos = ["#video", "#video1", "#video2"];
 
-pauseAll();
+
 
 function pauseAll(){
   var videoNow = document.querySelector('a-videosphere').getAttribute('src');
@@ -12,6 +12,8 @@ function pauseAll(){
   document.querySelector("#voice").pause();
   document.querySelector("#sound").pause();
 }
+
+pauseAll();
 
 function start(i){
   document.querySelector("#voice").pause();
@@ -22,7 +24,7 @@ function start(i){
   pauseAll();
   document.querySelector('a-videosphere').setAttribute('material', videoSrc[index]);
   var videoNow = document.querySelector('a-videosphere').getAttribute('src');
-  document.querySelector(videoNow.substring(NaN,videoNow.length)).play();
+  document.querySelector(videoNow.substring(NaN,videoNow.length-1)).play();
 }
 
 function exit(){
