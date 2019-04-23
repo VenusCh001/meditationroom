@@ -41,6 +41,8 @@ function pauseVideo(){
 
 
 function start(i){
+  var visible = document.getElementById("videoStuff").getAttribute('visible');
+  if (visible){return;}
   document.querySelector("#voice").components.sound.pause();
   document.querySelector("#sound").components.sound.pause();
   pauseVideo();
@@ -53,6 +55,8 @@ function start(i){
 }
 
 function exit(){
+  var visible = document.getElementById("mainStuff").getAttribute('visible');
+  if (visible){return;}
   index = 0;
   pauseVideo();
   pauseAudio();
@@ -60,6 +64,7 @@ function exit(){
   document.getElementById("videoStuff").setAttribute('visible','false');
   document.getElementById("mainStuff").setAttribute('visible','true');
   document.querySelector('a-videosphere').setAttribute('material', "src: #video0;");
+  document.querySelector("#sound").components.sound.play();
   pauseVideo();
 }
 
