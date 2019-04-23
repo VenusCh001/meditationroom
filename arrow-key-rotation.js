@@ -2,16 +2,31 @@
 var index = 0;
 var videoSrc = ["src: #video;", "src: #video1;", "src: #video2;"];
 var videos = ["#video", "#video1", "#video2"];
-var video = document.querySelector("#video");
-video.currentTime = 0;  // Seek to the beginning
-video.pause();
+
+pauseAll();
+
+function pauseAll(){
+  var video = document.querySelector("#video");
+  video.currentTime = 0;  // Seek to the beginning
+  video.pause();
+  var video1 = document.querySelector("#video1");
+  video1.currentTime = 0;  // Seek to the beginning
+  video1.pause();
+  var video2 = document.querySelector("#video");
+  video2.currentTime = 0;  // Seek to the beginning
+  video2.pause();
+  document.querySelector("#voice").pause();
+  document.querySelector("#sound").pause();
+}
 
 function start(i){
+  pauseAll();
   document.querySelector("#voice").pause();
   document.querySelector("#sound").pause();
   index = i;
   document.getElementById("videoStuff").setAttribute('visible','true');
   document.getElementById("mainStuff").setAttribute('visible','false');
+  pauseAll();
   document.querySelector('a-videosphere').setAttribute('material', videoSrc[index]);
   var video = document.querySelector("#video");
   video.currentTime = 0;  // Seek to the beginning
@@ -20,24 +35,19 @@ function start(i){
 
 function exit(){
   index = 0;
-  var video = document.querySelector("#video");
-  video.currentTime = 0;  // Seek to the beginning
-  video.pause();
+  pauseAll();
+  document.querySelector("#voice").play();
+  document.querySelector("#sound").play();
+  pauseAll();
   document.getElementById("videoStuff").setAttribute('visible','false');
   document.getElementById("mainStuff").setAttribute('visible','true');
+  pauseAll();
   document.querySelector('a-videosphere').setAttribute('material', "src: #video;");
-  var video = document.querySelector("#video");
-  video.currentTime = 0;  // Seek to the beginning
-  video.pause();
-  var video1 = document.querySelector("#video1");
-  video.currentTime = 0;  // Seek to the beginning
-  video.pause();
-  var video2 = document.querySelector("#video2");
-  video.currentTime = 0;  // Seek to the beginning
-  video.pause();
+  pauseAll();
 }
 
 function changeScene(){
+  pauseAll();
   var video = document.querySelector(videos[index]);
   video.currentTime = 0;  // Seek to the beginning
   video.pause();
