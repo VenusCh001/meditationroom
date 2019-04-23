@@ -6,13 +6,13 @@ var videos = ["#video", "#video1", "#video2"];
 pauseAll();
 
 function pauseAll(){
-  var video = document.querySelector("#video");
+  var video = document.querySelector('a-videosphere');
   video.currentTime = 0;  // Seek to the beginning
   video.pause();
   var video1 = document.querySelector("#video1");
   video1.currentTime = 0;  // Seek to the beginning
   video1.pause();
-  var video2 = document.querySelector("#video");
+  var video2 = document.querySelector("#video2");
   video2.currentTime = 0;  // Seek to the beginning
   video2.pause();
   document.querySelector("#voice").pause();
@@ -38,10 +38,8 @@ function exit(){
   pauseAll();
   document.querySelector("#voice").play();
   document.querySelector("#sound").play();
-  pauseAll();
   document.getElementById("videoStuff").setAttribute('visible','false');
   document.getElementById("mainStuff").setAttribute('visible','true');
-  pauseAll();
   document.querySelector('a-videosphere').setAttribute('material', "src: #video;");
   pauseAll();
 }
