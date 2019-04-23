@@ -6,9 +6,11 @@ var videos = ["#video", "#video1", "#video2"];
 
 
 function pauseAll(){
-  var videoNow = document.querySelector('a-videosphere').getAttribute('src');
-  document.querySelector(videoNow.substring(NaN,videoNow.length-1)).pause();
-  
+  var videoTextNow = document.querySelector('a-videosphere').getAttribute('src');
+
+  var video = document.querySelector(videoTextNow.substring(NaN,videoTextNow.length-1));
+  video.currentTime = 0;
+  video.pause();
   document.querySelector("#voice").pause();
   document.querySelector("#sound").pause();
 }
