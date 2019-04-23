@@ -6,7 +6,9 @@ var videos = ["#video", "#video1", "#video2"];
 pauseAll();
 
 function pauseAll(){
-  document.querySelector(document.querySelector('a-videosphere').getAttribute('src')).pause();
+  var videoNow = document.querySelector('a-videosphere').getAttribute('src');
+  document.querySelector(videoNow.substring(NaN,videoNow.length-1)).pause();
+  
   document.querySelector("#voice").pause();
   document.querySelector("#sound").pause();
 }
@@ -19,7 +21,8 @@ function start(i){
   document.getElementById("mainStuff").setAttribute('visible','false');
   pauseAll();
   document.querySelector('a-videosphere').setAttribute('material', videoSrc[index]);
-  document.querySelector(document.querySelector('a-videosphere').getAttribute('src')).play();
+  var videoNow = document.querySelector('a-videosphere').getAttribute('src');
+  document.querySelector(videoNow.substring(NaN,videoNow.length)).play();
 }
 
 function exit(){
