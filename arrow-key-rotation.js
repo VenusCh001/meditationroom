@@ -26,7 +26,7 @@ function pauseAudio(){
     //audioEl.setAttribute("src", audios[index]);
     
     var audio = audioEl.components.sound;
-    console.log(audio);
+    //console.log(audio);
     audio.stopSound();
 
 }
