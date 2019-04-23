@@ -3,15 +3,33 @@ var index = 0;
 var videoSrc = ["src: #video0;", "src: #video1;", "src: #video2;"];
 var videos = ["#video0", "#video1", "#video2"];
 var audios = ["#audio0", "#audio1", "#audio2"];
+document.querySelector('a-scene').addEventListener('loaded', function () {
+  document.getElementById("mainStuff").setAttribute('visible','true');
+});
 
 function playVideo(){
   document.querySelector('a-videosphere').setAttribute('material', videoSrc[index]);
   var videoNow = document.querySelector('a-videosphere').getAttribute('src');
   document.querySelector(videoNow.substring(NaN,videoNow.length-1)).play();
+  playAudio();
 }
 
-function playSound(){
-    
+function playAudio(){
+    var audioEl = document.querySelector("#voice");
+    audioEl.setAttribute("src", audios[index]);
+
+    var audio = audioEl.components.sound;
+    audio.playSound();
+    // stop = audio.stopSound();
+
+}
+
+function pauseAudio(){
+    var audioEl = document.querySelector("#voice");
+    audioEl.setAttribute("src", audios[index]);
+
+    var audio = audioEl.components.sound;
+    audio.stopSound();
 
 }
 
@@ -26,13 +44,15 @@ function pauseVideo(){
 
 
 function start(i){
-  document.querySelector("#voice").pause();
-  document.querySelector("#sound").pause();
+  document.querySelector("#voice").components.sound.pause();
+  document.querySelector("#sound").components.sound.pause();
   index = i;
   document.getElementById("videoStuff").setAttribute('visible','true');
   document.getElementById("mainStuff").setAttribute('visible','false');
   pauseVideo();
   playVideo();
+  pauseAudio();
+  playAudio();
 }
 
 function exit(){
@@ -48,8 +68,10 @@ function exit(){
 
 function changeScene(){
   pauseVideo();
+  pauseAudio();
   index = (index+1)%videos.length;
   playVideo();
+  playAudio();
 }
 
 AFRAME.registerComponent('arrow-key-rotation', {
