@@ -3,19 +3,21 @@ var index = 0;
 var videoSrc = ["src: #video;", "src: #video1;", "src: #video2;"];
 var videos = ["#video", "#video1", "#video2"];
 
+function playVideo(){
+  document.querySelector('a-videosphere').setAttribute('material', videoSrc[index]);
+  var videoNow = document.querySelector('a-videosphere').getAttribute('src');
+  document.querySelector(videoNow.substring(NaN,videoNow.length-1)).play();
+}
 
 
-function pauseAll(){
+function pauseVideo(){
   var videoTextNow = document.querySelector('a-videosphere').getAttribute('src');
 
   var video = document.querySelector(videoTextNow.substring(NaN,videoTextNow.length-1));
   video.currentTime = 0;
   video.pause();
-  document.querySelector("#voice").pause();
-  document.querySelector("#sound").pause();
 }
 
-pauseAll();
 
 function start(i){
   document.querySelector("#voice").pause();
@@ -23,25 +25,23 @@ function start(i){
   index = i;
   document.getElementById("videoStuff").setAttribute('visible','true');
   document.getElementById("mainStuff").setAttribute('visible','false');
-  pauseAll();
-  document.querySelector('a-videosphere').setAttribute('material', videoSrc[index]);
-  var videoNow = document.querySelector('a-videosphere').getAttribute('src');
-  document.querySelector(videoNow.substring(NaN,videoNow.length-1)).play();
+  pauseVideo();
+  playVideo();
 }
 
 function exit(){
   index = 0;
-  pauseAll();
+  pauseVideo();
   document.querySelector("#voice").play();
   document.querySelector("#sound").play();
   document.getElementById("videoStuff").setAttribute('visible','false');
   document.getElementById("mainStuff").setAttribute('visible','true');
   document.querySelector('a-videosphere').setAttribute('material', "src: #video;");
-  pauseAll();
+  pauseVideo();
 }
 
 function changeScene(){
-  pauseAll();
+  pauseVideo();
   var video = document.querySelector(videos[index]);
   video.currentTime = 0;  // Seek to the beginning
   video.pause();
