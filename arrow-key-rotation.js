@@ -42,14 +42,8 @@ function exit(){
 
 function changeScene(){
   pauseVideo();
-  var video = document.querySelector(videos[index]);
-  video.currentTime = 0;  // Seek to the beginning
-  video.pause();
   index = (index+1)%videos.length;
-  document.querySelector('a-videosphere').setAttribute('material', videoSrc[index]);
-  var video = document.querySelector(videos[index]);
-  video.currentTime = 0;  // Seek to the beginning
-  video.play();
+  playVideo();
 }
 
 AFRAME.registerComponent('arrow-key-rotation', {
