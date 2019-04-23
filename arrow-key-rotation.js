@@ -12,7 +12,7 @@ function start(i){
   index = i;
   document.getElementById("videoStuff").setAttribute('visible','true');
   document.getElementById("mainStuff").setAttribute('visible','false');
-  document.querySelector('a-videosphere').setAttribute('material', "src: #video;");
+  document.querySelector('a-videosphere').setAttribute('material', videoSrc[index]);
   var video = document.querySelector("#video");
   video.currentTime = 0;  // Seek to the beginning
   video.play();
@@ -27,6 +27,12 @@ function exit(){
   document.getElementById("mainStuff").setAttribute('visible','true');
   document.querySelector('a-videosphere').setAttribute('material', "src: #video;");
   var video = document.querySelector("#video");
+  video.currentTime = 0;  // Seek to the beginning
+  video.pause();
+  var video1 = document.querySelector("#video1");
+  video.currentTime = 0;  // Seek to the beginning
+  video.pause();
+  var video2 = document.querySelector("#video2");
   video.currentTime = 0;  // Seek to the beginning
   video.pause();
 }
