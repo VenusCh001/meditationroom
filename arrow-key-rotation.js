@@ -26,7 +26,7 @@ function pauseAudio(){
     audioEl.setAttribute("src", audios[index]);
     
     var audio = audioEl.components.sound;
-    console.log(audio);
+    //console.log(audio);
     audio.stopSound();
 
 }
@@ -57,8 +57,6 @@ function exit(){
   pauseVideo();
   pauseAudio();
   document.querySelector("#sound").play();
-  var audioEl = document.querySelector("#voice");
-  audioEl.setAttribute("src", "#voiceover");
   document.getElementById("videoStuff").setAttribute('visible','false');
   document.getElementById("mainStuff").setAttribute('visible','true');
   document.querySelector('a-videosphere').setAttribute('material', "src: #video0;");
