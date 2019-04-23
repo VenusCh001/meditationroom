@@ -2,11 +2,17 @@
 var index = 0;
 var videoSrc = ["src: #video0;", "src: #video1;", "src: #video2;"];
 var videos = ["#video0", "#video1", "#video2"];
+var audios = ["#audio0", "#audio1", "#audio2"];
 
 function playVideo(){
   document.querySelector('a-videosphere').setAttribute('material', videoSrc[index]);
   var videoNow = document.querySelector('a-videosphere').getAttribute('src');
   document.querySelector(videoNow.substring(NaN,videoNow.length-1)).play();
+}
+
+function playSound(){
+    
+
 }
 
 
