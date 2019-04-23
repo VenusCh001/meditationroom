@@ -7,20 +7,28 @@ video.currentTime = 0;  // Seek to the beginning
 video.pause();
 
 function start(i){
-  document.querySelector("voice").
+  document.querySelector("#voice").pause();
+  document.querySelector("#sound").pause();
   index = i;
   document.getElementById("videoStuff").setAttribute('visible','true');
   document.getElementById("mainStuff").setAttribute('visible','false');
   document.querySelector('a-videosphere').setAttribute('material', "src: #video;");
   var video = document.querySelector("#video");
   video.currentTime = 0;  // Seek to the beginning
-  video.pause();
+  video.play();
 }
 
 function exit(){
   index = 0;
+  var video = document.querySelector("#video");
+  video.currentTime = 0;  // Seek to the beginning
+  video.pause();
   document.getElementById("videoStuff").setAttribute('visible','false');
   document.getElementById("mainStuff").setAttribute('visible','true');
+  document.querySelector('a-videosphere').setAttribute('material', "src: #video;");
+  var video = document.querySelector("#video");
+  video.currentTime = 0;  // Seek to the beginning
+  video.pause();
 }
 
 function changeScene(){
