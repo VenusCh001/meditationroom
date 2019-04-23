@@ -10,6 +10,47 @@
     <script src="play-on-vrdisplayactivate-or-enter-vr.js"></script>
     <!-- Specify our scene. -->
     <a-scene>
+      
+       <a-assets>
+        <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+        <img id="cityTexture" src="https://cdn.glitch.com/45fdcef8-02ac-4e6d-8490-30e070fdc47f%2FSnip20190422_1.png?1555945959142">
+        <img id="waterfallTexture" src="https://cdn.glitch.com/858eae5d-8353-4b6c-ab8a-4f4614fce5c5%2Fwaterfall.png?1555559418410">
+        <img id="beachTexture" src="https://cdn.glitch.com/858eae5d-8353-4b6c-ab8a-4f4614fce5c5%2Fbeach.png?1555559420369">
+        <!-- Single source video. -->
+        
+        
+        
+        
+        
+        
+        <video id="video0" style="display:none" preload="auto"
+                loop crossorigin="anonymous" playsinline webkit-playsinline>
+          <!-- MP4 video source. 1-->
+          <source type="video/mp4"
+               src="https://cdn.glitch.com/45fdcef8-02ac-4e6d-8490-30e070fdc47f%2Fbeach_human_voice_2.mp4?1555702692075" />
+        </video>
+        <video id="video1" style="display:none" preload="auto"
+               loop crossorigin="anonymous" playsinline webkit-playsinline>
+          <!-- MP4 video source.2 -->
+          <source type="video/mp4"
+               src="https://cdn.glitch.com/45fdcef8-02ac-4e6d-8490-30e070fdc47f%2Fwaterfall_human_voice_2.mp4?1555702512950" />
+        </video>
+        <video id="video2" style="display:none" preload="auto"
+               loop crossorigin="anonymous" playsinline webkit-playsinline>
+          <!-- MP4 video source. 3-->
+          <source type="video/mp4"
+               src="https://cdn.glitch.com/9db9d832-1b43-4aeb-b5f8-6ccfd25c6c5b%2Fcity_mute.mp4?1555983860103" />
+        </video>
+        
+        <audio id="audio0" preload="auto" src = "https://cdn.glitch.com/95fffca9-6988-450b-be1a-bf6a2e23ea1f%2Fmeditation_male_voice_5min_test.mp3?1555247334366" ></audio>
+        <audio id="audio1" preload="auto" src = "https://cdn.glitch.com/95fffca9-6988-450b-be1a-bf6a2e23ea1f%2Fmeditation_male_voice_5min_test.mp3?1555247334366" ></audio>
+        <audio id="audio2" preload="auto" src = "https://cdn.glitch.com/b95b2b9d-52d2-4c16-8b75-ef0496cdff35%2Fcity_human_voice_2_audio.mp3?1555984127541" ></audio>
+        <audio id="bgm" preload="auto" src = "https://cdn.glitch.com/95fffca9-6988-450b-be1a-bf6a2e23ea1f%2Fyzs_bgm.mp3?1555597052912" ></audio>    
+        <audio id="voiceover" preload="auto"  src = "https://cdn.glitch.com/858eae5d-8353-4b6c-ab8a-4f4614fce5c5%2Fhome.mp3?1555616741449" ></audio>  
+      </a-assets>
+      
+      
+      
       <!--Video Stuff-->
       <a-entity id = "videoStuff" visible = "false">
       <a-videosphere id = "vsphere" rotation="0 180 0" 
@@ -126,41 +167,7 @@
         </a-entity>  
       </a-camera>
       <!-- Wait for the video to load. -->
-      <a-assets>
-        <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
-        <img id="cityTexture" src="https://cdn.glitch.com/45fdcef8-02ac-4e6d-8490-30e070fdc47f%2FSnip20190422_1.png?1555945959142">
-        <img id="waterfallTexture" src="https://cdn.glitch.com/858eae5d-8353-4b6c-ab8a-4f4614fce5c5%2Fwaterfall.png?1555559418410">
-        <img id="beachTexture" src="https://cdn.glitch.com/858eae5d-8353-4b6c-ab8a-4f4614fce5c5%2Fbeach.png?1555559420369">
-        <!-- Single source video. -->
-        
-        
-        
-        
-        
-        
-        <video id="video" style="display:none" preload="auto"
-                loop crossorigin="anonymous" playsinline webkit-playsinline>
-          <!-- MP4 video source. 1-->
-          <source type="video/mp4"
-               src="https://cdn.glitch.com/45fdcef8-02ac-4e6d-8490-30e070fdc47f%2Fbeach_human_voice_2.mp4?1555702692075" />
-        </video>
-        <video id="video1" style="display:none" preload="auto"
-               loop crossorigin="anonymous" playsinline webkit-playsinline>
-          <!-- MP4 video source.2 -->
-          <source type="video/mp4"
-               src="https://cdn.glitch.com/45fdcef8-02ac-4e6d-8490-30e070fdc47f%2Fwaterfall_human_voice_2.mp4?1555702512950" />
-        </video>
-        <video id="video2" style="display:none" preload="auto"
-               loop crossorigin="anonymous" playsinline webkit-playsinline>
-          <!-- MP4 video source. 3-->
-          <source type="video/mp4"
-               src="https://cdn.glitch.com/45fdcef8-02ac-4e6d-8490-30e070fdc47f%2Fcity_human_voice_2.mp4?1555702999285" />
-        </video>
-        
-        <audio id="audio" preload="auto" src = "https://cdn.glitch.com/95fffca9-6988-450b-be1a-bf6a2e23ea1f%2Fmeditation_male_voice_5min_test.mp3?1555247334366" ></audio>
-        <audio id="bgm" preload="auto" src = "https://cdn.glitch.com/95fffca9-6988-450b-be1a-bf6a2e23ea1f%2Fyzs_bgm.mp3?1555597052912" ></audio>    
-        <audio id="voiceover" preload="auto"  src = "https://cdn.glitch.com/858eae5d-8353-4b6c-ab8a-4f4614fce5c5%2Fhome.mp3?1555616741449" ></audio>  
-      </a-assets>
+     
     </a-scene>
     
     
