@@ -23,10 +23,10 @@ function playAudio(){
 
 function pauseAudio(){
     var audioEl = document.querySelector("#voice");
-    audioEl.setAttribute("src", audios[index]);
+    //audioEl.setAttribute("src", audios[index]);
     
     var audio = audioEl.components.sound;
-    //console.log(audio);
+    console.log(audio);
     audio.stopSound();
 
 }
@@ -43,12 +43,12 @@ function pauseVideo(){
 function start(i){
   document.querySelector("#voice").components.sound.pause();
   document.querySelector("#sound").components.sound.pause();
+  pauseVideo();
+  pauseAudio();
   index = i;
   document.getElementById("videoStuff").setAttribute('visible','true');
   document.getElementById("mainStuff").setAttribute('visible','false');
-  pauseVideo();
   playVideo();
-  pauseAudio();
   playAudio();
 }
 
