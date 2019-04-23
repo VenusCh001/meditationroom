@@ -6,21 +6,12 @@ var videos = ["#video", "#video1", "#video2"];
 pauseAll();
 
 function pauseAll(){
-  var video = document.querySelector('a-videosphere');
-  video.currentTime = 0;  // Seek to the beginning
-  video.pause();
-  var video1 = document.querySelector("#video1");
-  video1.currentTime = 0;  // Seek to the beginning
-  video1.pause();
-  var video2 = document.querySelector("#video2");
-  video2.currentTime = 0;  // Seek to the beginning
-  video2.pause();
+  document.querySelector(document.querySelector('a-videosphere').getAttribute('src')).pause();
   document.querySelector("#voice").pause();
   document.querySelector("#sound").pause();
 }
 
 function start(i){
-  pauseAll();
   document.querySelector("#voice").pause();
   document.querySelector("#sound").pause();
   index = i;
@@ -28,9 +19,7 @@ function start(i){
   document.getElementById("mainStuff").setAttribute('visible','false');
   pauseAll();
   document.querySelector('a-videosphere').setAttribute('material', videoSrc[index]);
-  var video = document.querySelector("#video");
-  video.currentTime = 0;  // Seek to the beginning
-  video.play();
+  document.querySelector(document.querySelector('a-videosphere').getAttribute('src')).play();
 }
 
 function exit(){
