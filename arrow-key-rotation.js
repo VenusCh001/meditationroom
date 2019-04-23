@@ -70,7 +70,7 @@ function exit(){
 
 function changeScene(){
   var visible = document.getElementById("videoStuff").getAttribute('visible');
-  if (visible){return;}
+  if (!visible){return;}
   pauseVideo();
   pauseAudio();
   index = (index+1)%videos.length;
